@@ -1,0 +1,10 @@
+# Centos 7
+vim install.yml
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - yum: name={{item}} state=latest
+    with_items:
+    - httpd
+    - php
